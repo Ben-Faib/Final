@@ -5,20 +5,23 @@ import java.awt.event.MouseEvent;
 
 public class Space extends GraphicsProgram
 {
-  
+    private Rocket myRocket;
+
     public void init()
     {
-        
+        myRocket= new Rocket(50.0, 50.0, getFillColor(137));
 
-        for (int k = 0 ; k < 1 ; k++)
+        for (int k = 0 ; k <= 1 ; k++)
         {
-            
+            myRocket = new Rocket(getWidth() * Math.random(), 
+            getHeight() * Math.random(), 
+            new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random())));
+           
+            add(myRocket[k]);
 
         }
 
-       
     }
-
     public void mouseMoved(MouseEvent e)
     {
         double y;
@@ -31,9 +34,7 @@ public class Space extends GraphicsProgram
         if (y > getHeight() - 50)
             y = getHeight() - 50;
 
-        
        
-
     
         double x;
 
@@ -45,21 +46,12 @@ public class Space extends GraphicsProgram
         if (x> getWidth() - 60)
             x= getWidth() - 60;
 
-       
       
     }
 
     public void run()
     {
-        while (true)
-        {
-            for (int k = 0 ; k < 1 ; k++)
-               
-
-           
-        }
-    }
 
     }
-
+}
 
