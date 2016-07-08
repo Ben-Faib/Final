@@ -6,11 +6,13 @@ import java.awt.event.MouseEvent;
 public class Space extends GraphicsProgram
 {
     private Rocket myRocket;
-
+    private Stars myStars;
+    
+    
     public void init()
     {
         Color c = new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()));
-
+       
         myRocket = new Rocket(c);
 
         myRocket.addVertex(getWidth()/2, getHeight()/2);
@@ -18,7 +20,15 @@ public class Space extends GraphicsProgram
         myRocket.addVertex(getWidth()/2 + 14, getHeight()/2 + 21);
         myRocket.addVertex(getWidth()/2 - 14, getHeight()/2 - 21);
         myRocket.addVertex(getWidth()/2 - 14 ,getHeight()/2 + 21);
-
+        add(myRocket);
+        
+        myStars = new Stars(Color.WHITE);
+        
+        myStars.addVertex(10, 13);
+        myStars.addVertex(15,30);
+        myStars.addVertex(33, 500);
+        
+        
         add(myRocket);
 
         setBackground(Color.BLACK);
