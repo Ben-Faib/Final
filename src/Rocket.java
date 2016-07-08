@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.Timer;
 
-public class Rocket extends Applet {
+public class Rocket extends Applet{
   private final int APPLET_WIDTH = 200;
   private final int APPLET_HEIGHT = 500;
 
