@@ -17,9 +17,6 @@ GPolygon gpoly = new GPolygon();
         setFillColor(c);
     }
     
-    public void addVertex(double x, double y)
-    {
-        
-    }
+
 
 }
