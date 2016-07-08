@@ -19,11 +19,6 @@ public class Space extends GraphicsProgram
             getHeight() * Math.random(), c);
             
             add(myRocket);
-           
-           
-            
-           
-
         }
 
     }

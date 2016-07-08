@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=x\ y\ c
+comment0.target=Rocket(double,\ double,\ java.awt.Color)
+comment1.params=x\ y
+comment1.target=Rocket(double,\ double)
+numComments=2

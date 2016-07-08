@@ -16,4 +16,14 @@ public class Rocket extends GPolygon
         setColor(c); 
         setFillColor(c);
     }
+    
+    public Rocket(double x, double y)
+    {
+        addVertex( 53, 57);
+        
+        addVertex(54, 59);
+        
+        addVertex(31, 98);
+}
+
 }
