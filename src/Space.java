@@ -11,22 +11,17 @@ public class Space extends GraphicsProgram
     public void init()
     {
         Color c = new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()));
-        myRocket= new Rocket(50.0, 50.0, c);
+        myRocket= new Rocket(getWidth()/2, getHeight()/2, c);
 
-        for (int k = 0 ; k <= 1 ; k++)
-        {
+        
+    
             myRocket = new Rocket(getWidth() * Math.random(), 
             getHeight() * Math.random(), c);
-            
             add(myRocket);
-        }
-
+            myRocket.addVertex(12,11);
+        
+        
     }
-    public void mouseMoved(MouseEvent e)
-    {
-
-
-
-    }
+    
 }
 

@@ -4,26 +4,21 @@ import java.awt.Color;
 
 
 public class Rocket extends GPolygon
-{
-    private double xPosition;
-    private double yPosition;
+{ 
+GPolygon gpoly = new GPolygon();
+    private double x;
+    private double y;
     private Space mySpace;
 
     public Rocket(double x, double y, Color c)
     {
         super(x, y);
-        
         setColor(c); 
         setFillColor(c);
     }
     
-    public Rocket(double x, double y)
+    public void addVertex(double x, double y)
     {
-        addVertex( 53, 57);
-        
-        addVertex(54, 59);
-        
-        addVertex(31, 98);
-}
+    }
 
 }

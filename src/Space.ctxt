@@ -1,6 +1,4 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ init()
-comment1.params=e
-comment1.target=void\ mouseMoved(java.awt.event.MouseEvent)
-numComments=2
+numComments=1
