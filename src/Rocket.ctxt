@@ -1,4 +1,8 @@
 #BlueJ class context
 comment0.params=c
 comment0.target=Rocket(java.awt.Color)
-numComments=1
+comment1.params=x
+comment1.target=void\ setX(double)
+comment2.params=y
+comment2.target=void\ setY(double)
+numComments=3
