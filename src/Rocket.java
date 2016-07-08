@@ -13,8 +13,8 @@ public class Rocket extends GPolygon
         super(x, y);
         
         setColor(c); 
-        setFillColor(c);
-        c = 137;
+        setFillColor(c)=  (int)(256 * Math.random());
+       
         
         
         mySpace = Space;

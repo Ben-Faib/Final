@@ -9,7 +9,7 @@ public class Space extends GraphicsProgram
 
     public void init()
     {
-        myRocket= new Rocket(50.0, 50.0, getFillColor(137));
+        myRocket= new Rocket(50.0, 50.0, getFillColor(c);
 
         for (int k = 0 ; k <= 1 ; k++)
         {
