@@ -10,9 +10,9 @@ GPolygon gpoly = new GPolygon();
     private double y;
     private Space mySpace;
 
-    public Rocket(double x, double y, Color c)
+    public Rocket( Color c)
     {
-        super(x, y);
+        
         setColor(c); 
         setFillColor(c);
     }

@@ -12,13 +12,13 @@ public class Space extends GraphicsProgram
     {
         Color c = new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()));
         
-        myRocket= new Rocket(getWidth()/2, getHeight()/2, c);
+        myRocket= new Rocket(c);
         
-            myRocket = new Rocket(getWidth() * Math.random(), 
-            getHeight() * Math.random(), c);
-            myRocket.addVertex(12,11);
-            myRocket.addVertex(15,17);
-            myRocket.addVertex(31, 12);
+            myRocket = new Rocket(c);
+            myRocket.addVertex(200,200);
+            myRocket.addVertex(225,235);
+            myRocket.addVertex(270, 250);
+            myRocket.addVertex(490,260);
             add(myRocket);
            
         
