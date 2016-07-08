@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ init()
-numComments=1
+comment1.params=
+comment1.target=Rocket\ getmyRocket()
+numComments=2
