@@ -2,6 +2,7 @@ import acm.program.*;
 import acm.graphics.*;
 import java.awt.Color;
 
+
 public class Rocket extends GPolygon
 {
     private double xPosition;
@@ -13,10 +14,6 @@ public class Rocket extends GPolygon
         super(x, y);
         
         setColor(c); 
-        setFillColor(c)=  (int)(256 * Math.random());
-       
-        
-        
-        mySpace = Space;
+        setFillColor(c);
     }
 }
