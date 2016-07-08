@@ -1,10 +1,11 @@
-import acm.program.*;
-import acm.graphics.*;
-import java.awt.Color;
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.Timer;
 
-public class Rocket extends Space{
-  private final int Space_WIDTH = 200;
-  private final int Space_HEIGHT = 500;
+public class Rocket extends Applet {
+  private final int APPLET_WIDTH = 200;
+  private final int APPLET_HEIGHT = 500;
 
   private int[] xRocket = { 100, 120, 120, 130, 130, 70, 70, 80, 80 };
   private int[] yRocket = { 315, 340, 415, 425, 450, 450, 425, 415, 340 };
@@ -25,7 +26,7 @@ public class Rocket extends Space{
   //-----------------------------------------------------------------
   public void init() {
     setBackground(Color.black);
-    setSize(Space_WIDTH, Space_HEIGHT);
+    setSize(APPLET_WIDTH, APPLET_HEIGHT);
 
     final int DELAY = 20;
     timer = new Timer(DELAY, new RocketActionListener());
