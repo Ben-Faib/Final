@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=inX\ inY
+comment0.target=Point(double,\ double)
+comment1.params=
+comment1.target=Point\ clone()
+numComments=2
