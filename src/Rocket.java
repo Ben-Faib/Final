@@ -15,4 +15,10 @@ public class Rocket extends GPolygon
         setFilled(true);
     }
 
+    public void move()
+    {
+        if (getX()<=0)
+        setLocation(getX() + 300, getY());
+}
+
 }
