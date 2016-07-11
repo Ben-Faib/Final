@@ -4,7 +4,7 @@ import java.awt.Color;
 
 public class Rocket extends GPolygon
 { 
-    GPolygon gpoly = new GPolygon();
+    GPolygon Rocket = new GPolygon();
     private double x;
     private double y;
     private Space mySpace;
