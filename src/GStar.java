@@ -29,8 +29,8 @@ public class GStar extends GPolygon {
         this(size);
         setLocation(x, y);
         
-        setColor(Color.WHITE); 
-        setFillColor(Color.WHITE);
+        setColor(Color.YELLOW); 
+        setFillColor(Color.YELLOW);
         setFilled(true);
 
     }

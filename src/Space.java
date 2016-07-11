@@ -22,12 +22,39 @@ public class Space extends GraphicsProgram
         add(myRocket);
         
         
-        myStars = new GStar(10, 14, 12);
-       
-        
-  
-        
+        myStars = new GStar(16, 17, 8);
         add(myStars);
+        
+        myStars = new GStar(120, 190, 10);
+        add(myStars);
+        
+        myStars = new GStar(350, 90, 12);
+        add(myStars);
+        
+        myStars = new GStar(470, 320, 7);
+        add(myStars);
+        
+        myStars = new GStar(600, 83, 10);
+        add(myStars);
+        
+        myStars = new GStar(700, 400, 13);
+        add(myStars);
+        
+        myStars = new GStar(30, 300, 10);
+        add(myStars);
+        
+        myStars = new GStar(250, 350, 9);
+        add(myStars);
+        
+        myStars = new GStar(210, 410, 15);
+        add(myStars);
+        
+        myStars = new GStar(540, 340, 12);
+        add(myStars);
+        
+        add(myRocket);
+        
+       
 
         
         
