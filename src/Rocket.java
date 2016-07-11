@@ -16,15 +16,4 @@ public class Rocket extends GPolygon
         setFilled(true);
     }
 
-    public void setX (double x) 
-    {
-        setLocation(x, getY());
-
-    }
-
-    public void setY (double y)
-    {
-        setLocation(getX(), y);
-
-    }
 }
