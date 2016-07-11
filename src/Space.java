@@ -8,12 +8,14 @@ public class Space extends GraphicsProgram
 {
     private Rocket myRocket;
     private GStar myStars;
+    private Planet myPlanet;
     private double myAngle = 90;
-    
+
     public void init()
     {
         Color c = new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()));
-       
+        Color d = new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()));
+
         myRocket = new Rocket(c);
 
         myRocket.addVertex(getWidth()/2, getHeight()/2);
@@ -21,14 +23,7 @@ public class Space extends GraphicsProgram
         myRocket.addVertex(getWidth()/2 + 14, getHeight()/2 + 21);
         myRocket.addVertex(getWidth()/2 - 14, getHeight()/2 - 21);
         myRocket.addVertex(getWidth()/2 - 14 ,getHeight()/2 + 21);
-<<<<<<< HEAD
-        
-        
-        
-=======
-        add(myRocket);
 
->>>>>>> origin/master
         myStars = new GStar(16, 17, 8);
         add(myStars);
 
@@ -58,58 +53,69 @@ public class Space extends GraphicsProgram
 
         myStars = new GStar(540, 340, 12);
         add(myStars);
-<<<<<<< HEAD
+
+        myPlanet = new Planet(450, 
+            30, 22, 
+            new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()))); 
+        add(myPlanet);
+
+        myPlanet = new Planet(360, 
+            320, 17, 
+            new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()))); 
+        add(myPlanet);
+
+        myPlanet = new Planet(270, 
+            240, 14, 
+            new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()))); 
+        add(myPlanet);
         
+        myPlanet = new Planet(650, 
+            290, 12, 
+            new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()))); 
+            add(myPlanet);
+            
+            myPlanet = new Planet(100, 
+            390, 23, 
+            new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()))); 
+            add(myPlanet);
+            
+            myPlanet = new Planet(40, 
+            100, 27, 
+            new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()))); 
+            add(myPlanet);
+
         add(myRocket);
-        
         setBackground(Color.BLACK);
-        
-        myRocket.setLocation(getWidth()/2, getHeight()/2);
-=======
-
-
-       setBackground(Color.BLACK);
-
         myRocket.setLocation(getWidth()/2, getHeight()/2);
 
->>>>>>> origin/master
+        setBackground(Color.BLACK);
+        myRocket.setLocation(getWidth()/2, getHeight()/2);
+
         myRocket.recenter();
-
         addMouseListeners();
 
-        add(myRocket);
     }
+
     public void mouseMoved(MouseEvent e)
     {
         double Y1 = myRocket.getY();
         double X1 = myRocket.getX();
         double Y0 = e.getY();
         double X0 = e.getX();
-<<<<<<< HEAD
+
         double newAngle = GMath.angle(X0, Y0, X1, Y1);
         myRocket.rotate(newAngle - myAngle);
         myAngle = newAngle;
     }
-    
-    
 
-    
-    
-    public Rocket getmyRocket(){
-=======
-        double newAngle = GMath.angle(X0, Y0,X1, Y1);
-        myRocket.rotate(newAngle-myAngle);
-        myAngle = newAngle;
+    public Rocket getmyRocket()
+    {
+        return (myRocket); 
     }
+
     public static void main(String[]args)
     {
         new Space().start();
     }
-    public Rocket getmyRocket()
-    {
->>>>>>> origin/master
-        return myRocket;
-    }
 
 }
-

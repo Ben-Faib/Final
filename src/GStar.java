@@ -16,10 +16,11 @@ public class GStar extends GPolygon {
         }
         markAsComplete();
     }
+
     public GStar(double x, double y, double size) {
         this(size);
         setLocation(x, y);
-        
+
         setColor(Color.YELLOW); 
         setFillColor(Color.YELLOW);
         setFilled(true);
