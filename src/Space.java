@@ -88,13 +88,14 @@ public class Space extends GraphicsProgram
             
         add(myRocket);
         
-        myAsteroid = new Asteroid(Color.WHITE);
+        myAsteroid = new Asteroid(Color.WHITE, 0, -60);
         
-        myAsteroid.addVertex(getWidth()/2, getHeight()/2 +180);
-        myAsteroid.addVertex(getWidth()/2 - 24, getHeight()/2 + 195);
-        myAsteroid.addVertex(getWidth()/2 + 24, getHeight()/2 + 195);
-        
+        myAsteroid.addVertex(getWidth()/2, getHeight()/2 -360);
+        myAsteroid.addVertex(getWidth()/2 -24 , getHeight()/2 - 345);
+        myAsteroid.addVertex(getWidth()/2 + 24, getHeight()/2 - 345);
         myAsteroid.addArc(100, 90, 10, 40);
+        
+        
         
         add(myAsteroid);
         

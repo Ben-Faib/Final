@@ -1,4 +1,6 @@
 #BlueJ class context
-comment0.params=s
-comment0.target=Asteroid(java.awt.Color)
-numComments=1
+comment0.params=s\ XVel\ YVel
+comment0.target=Asteroid(java.awt.Color,\ double,\ double)
+comment1.params=
+comment1.target=void\ move()
+numComments=2
