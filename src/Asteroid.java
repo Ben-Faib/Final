@@ -20,6 +20,7 @@ public class Asteroid extends GPolygon
 public void move()
 {
     if (getY()<0) {
+        
         myYVelocity = 30;
 }
 }
