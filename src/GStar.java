@@ -2,8 +2,6 @@ import acm.program.*;
 import acm.graphics.*;
 import java.awt.Color;
 
-public class GStar extends GPolygon {
-    public GStar(double size) {
 public class GStar extends GPolygon
 {
     public GStar(double size)
@@ -13,7 +11,6 @@ public class GStar extends GPolygon
         double edge = (0.5 - b) * size;
         addVertex(-size / 2, -b * size);
         int angle = 0;
-        for (int i = 0; i < 5; i++) {
         for (int i = 0; i < 5; i++)
         {
             addPolarEdge(edge, angle);
@@ -23,7 +20,6 @@ public class GStar extends GPolygon
         markAsComplete();
     }
 
-    public GStar(double x, double y, double size) {
     public GStar(double x, double y, double size)
     {
         this(size);
