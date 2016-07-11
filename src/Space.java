@@ -2,11 +2,12 @@ import acm.program.*;
 import acm.graphics.*;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import acm.graphics.GMath;
 
 public class Space extends GraphicsProgram
 {
     private Rocket myRocket;
-    private Stars myStars;
+    private GStar myStars;
     private double myAngle = 90;
     
     public void init()
@@ -20,7 +21,9 @@ public class Space extends GraphicsProgram
         myRocket.addVertex(getWidth()/2 + 14, getHeight()/2 + 21);
         myRocket.addVertex(getWidth()/2 - 14, getHeight()/2 - 21);
         myRocket.addVertex(getWidth()/2 - 14 ,getHeight()/2 + 21);
-        Stars = new GStar(16, 17, 8);
+        add(myRocket);
+
+        myStars = new GStar(16, 17, 8);
         add(myStars);
 
         myStars = new GStar(120, 190, 10);
@@ -50,19 +53,23 @@ public class Space extends GraphicsProgram
         myStars = new GStar(540, 340, 12);
         add(myStars);
 
-        add(myRocket);
-        
-        add(myRocket);
-        setBackground(Color.BLACK);
-        addMouseListeners();
+
+       setBackground(Color.BLACK);
+
         myRocket.setLocation(getWidth()/2, getHeight()/2);
+
+        myRocket.recenter();
+
+        addMouseListeners();
+
+        add(myRocket);
     }
     public void mouseMoved(MouseEvent e)
     {
         double Y1 = myRocket.getY();
         double X1 = myRocket.getX();
         double Y0 = e.getY();
-        double X0 =  e.getX();
+        double X0 = e.getX();
         double newAngle = GMath.angle(X0, Y0,X1, Y1);
         myRocket.rotate(newAngle-myAngle);
         myAngle = newAngle;
@@ -71,8 +78,10 @@ public class Space extends GraphicsProgram
     {
         new Space().start();
     }
-    public Rocket getmyRocket(){
+    public Rocket getmyRocket()
+    {
         return myRocket;
     }
+
 }
 

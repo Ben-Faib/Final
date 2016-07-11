@@ -3,10 +3,6 @@ import acm.graphics.*;
 import java.awt.Color;
 
 public class GStar extends GPolygon {
-    /**
-     * Creates a new GStar centered at the origin that fits inside
-     * a square of the specified size.
-     */
     public GStar(double size) {
         double sinTheta = GMath.sinDegrees(18);
         double b = 0.5 * sinTheta / (1.0 + sinTheta);
@@ -20,11 +16,6 @@ public class GStar extends GPolygon {
         }
         markAsComplete();
     }
-
-    /**
-     * Creates a new GStar centered at the point (x, y) that fits inside
-     * a square of the specified size.
-     */
     public GStar(double x, double y, double size) {
         this(size);
         setLocation(x, y);
