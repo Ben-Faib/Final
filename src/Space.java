@@ -9,15 +9,17 @@ public class Space extends GraphicsProgram
     private Rocket myRocket;
     private GStar myStars;
     private Planet myPlanet;
+    private Asteroid myAsteroid;
     private double myAngle = 90;
 
     public void init()
     {
         Color c = new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()));
         Color d = new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()));
-
+       
         myRocket = new Rocket(c);
-
+        
+        
         myRocket.addVertex(getWidth()/2, getHeight()/2);
         myRocket.addVertex(getWidth()/2 + 14, getHeight()/2 - 21);
         myRocket.addVertex(getWidth()/2 + 14, getHeight()/2 + 21);
@@ -83,8 +85,19 @@ public class Space extends GraphicsProgram
             100, 27, 
             new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()))); 
             add(myPlanet);
-
+            
         add(myRocket);
+        
+        myAsteroid = new Asteroid(Color.WHITE);
+        
+        myAsteroid.addVertex(getWidth()/2, getHeight()/2 +180);
+        myAsteroid.addVertex(getWidth()/2 - 24, getHeight()/2 + 195);
+        myAsteroid.addVertex(getWidth()/2 + 24, getHeight()/2 + 195);
+        
+        myAsteroid.addArc(100, 90, 10, 40);
+        
+        add(myAsteroid);
+        
         setBackground(Color.BLACK);
         myRocket.setLocation(getWidth()/2, getHeight()/2);
 
