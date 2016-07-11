@@ -1,7 +1,6 @@
 import acm.program.*;
 import acm.graphics.*;
 import acm.gui.*;
-
 import java.awt.event.*;
 import java.awt.Color;
 import javax.swing.*;
