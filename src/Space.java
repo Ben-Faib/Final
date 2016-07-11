@@ -109,6 +109,7 @@ public class Space extends GraphicsProgram
         addKeyListeners();
     }
 
+
     public void run()
     {
         while (true)
@@ -119,6 +120,7 @@ public class Space extends GraphicsProgram
             pause(15);
         }
     }
+
 
     public void mouseMoved(MouseEvent e)
     {
