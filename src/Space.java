@@ -88,8 +88,8 @@ public class Space extends GraphicsProgram
             
         add(myRocket);
         
-        myAsteroid = new Asteroid(Color.WHITE, 0, -60);
         
+        myAsteroid = new Asteroid(Color.WHITE, 0, 60);
         myAsteroid.addVertex(getWidth()/2, getHeight()/2 -360);
         myAsteroid.addVertex(getWidth()/2 -24 , getHeight()/2 - 345);
         myAsteroid.addVertex(getWidth()/2 + 24, getHeight()/2 - 345);
@@ -102,8 +102,7 @@ public class Space extends GraphicsProgram
         setBackground(Color.BLACK);
         myRocket.setLocation(getWidth()/2, getHeight()/2);
 
-        setBackground(Color.BLACK);
-        myRocket.setLocation(getWidth()/2, getHeight()/2);
+        
 
         myRocket.recenter();
         addMouseListeners();
