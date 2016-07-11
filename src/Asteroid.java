@@ -8,20 +8,26 @@ public class Asteroid extends GPolygon
     private double myXVelocity;
     private double myYVelocity;
     private Space mySpace;
-   
-   public Asteroid(Color s, double XVel, double YVel)
-   {
-       setColor(Color.WHITE); 
-       setFillColor(Color.WHITE);
-       
-       myXVelocity = XVel;
-       myYVelocity = YVel;
-}
-public void move()
-{
-    if (getY()<0) {
+
+    public Asteroid(Color s, double XVel, double YVel)
+    {
+        setColor(Color.WHITE); 
+        setFillColor(Color.WHITE);
+
+        myXVelocity = XVel;
+        myYVelocity = YVel;
+    }
+
+    public void move()
+    {
+        if (getY()<0) {
+
+            myYVelocity = 20;
+        }
         
-        myYVelocity = 30;
-}
-}
+        
+        super.move(myXVelocity, myYVelocity);
+    }
+    
+    
 }

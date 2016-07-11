@@ -5,7 +5,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import acm.graphics.GMath;
 
-
 public class Space extends GraphicsProgram
 {
     private Rocket myRocket;
@@ -75,36 +74,31 @@ public class Space extends GraphicsProgram
         myPlanet = new Planet(650,
             290, 12,
             new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random())));
-            add(myPlanet);
+        add(myPlanet);
 
-            myPlanet = new Planet(100,
+        myPlanet = new Planet(100,
             390, 23,
             new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random())));
-            add(myPlanet);
+        add(myPlanet);
 
-            myPlanet = new Planet(40,
+        myPlanet = new Planet(40,
             100, 27,
             new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random())));
-            add(myPlanet);
+        add(myPlanet);
 
         add(myRocket);
-<<<<<<< HEAD
-        
-        
-        myAsteroid = new Asteroid(Color.WHITE, 0, 60);
-=======
 
-        myAsteroid = new Asteroid(Color.WHITE, 0, -60);
+        myAsteroid = new Asteroid(Color.WHITE, 0, 2);
 
->>>>>>> origin/master
         myAsteroid.addVertex(getWidth()/2, getHeight()/2 -360);
         myAsteroid.addVertex(getWidth()/2 -24 , getHeight()/2 - 345);
-        myAsteroid.addVertex(getWidth()/2 + 24, getHeight()/2 - 345);
+        myAsteroid.addVertex(getWidth()/2 + 36, getHeight()/2 - 345);
         myAsteroid.addArc(100, 90, 10, 40);
 
         add(myAsteroid);
 
-        
+        setBackground(Color.BLACK);
+        myRocket.setLocation(getWidth()/2, getHeight()/2);
 
         myRocket.recenter();
 
@@ -113,6 +107,17 @@ public class Space extends GraphicsProgram
         add(myRocket);
 
         addKeyListeners();
+    }
+
+    public void run()
+    {
+        while (true)
+        {
+            for (int k = 0 ; k < 1 ; k++)
+                myAsteroid.move();
+
+            pause(15);
+        }
     }
 
     public void mouseMoved(MouseEvent e)
@@ -125,12 +130,13 @@ public class Space extends GraphicsProgram
         myRocket.rotate(newAngle - myAngle);
         myAngle = newAngle;
     }
+
     public void keyPressed(KeyEvent e)
     {
         System.out.println(e.getKeyChar());
         if (e.getKeyChar() == 'w')
         {
-          myRocket.move( 0, -35);
+            myRocket.move( 0, -35);
         }
         if (e.getKeyChar() == 'd')
         {
@@ -156,18 +162,19 @@ public class Space extends GraphicsProgram
         {
             myRocket.move( 35, 35);
         }
-        if (e.getKeyChar() == 'z')
+        if (e.getKeyChar() =='z')
         {
             myRocket.move( -35, 35);
         }
     }
+
     public static void main(String[]args)
     {
         new Space().start();
     }
+
     public Rocket getmyRocket()
     {
         return myRocket;
     }
 }
-
