@@ -109,7 +109,6 @@ public class Space extends GraphicsProgram
 
         addKeyListeners();
     }
-
     public void mouseMoved(MouseEvent e)
     {
         double Y0 = e.getY();
