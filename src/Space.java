@@ -113,14 +113,13 @@ public class Space extends GraphicsProgram
 
         addKeyListeners();
     }
-
     public void run()
     {
         while (true)
         {
             for (int k = 0 ; k < 1 ; k++)
-                myAsteroid.move(); myAsteroid1.move();
-           
+                myAsteroid.move();
+
             pause(15);
         }
     }
@@ -174,6 +173,7 @@ public class Space extends GraphicsProgram
     {
         new Space().start();
     }
+
     public Rocket getmyRocket()
     {
         return myRocket;
@@ -184,10 +184,9 @@ public class Space extends GraphicsProgram
         double Ax = myAsteroid.getX();
         double Ry = myRocket.getY();
         double Rx = myRocket.getX();
-
-        //while (Ay = Ry && Ax = Rx)
-        {
-            //asrawuyflkhrsjhlki
-        }
+            //while (Ay = Ry && Ax = Rx)
+            {
+                //asawr
+            }
     }
 }
