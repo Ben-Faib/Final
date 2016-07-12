@@ -11,4 +11,6 @@ comment4.params=args
 comment4.target=void\ main(java.lang.String[])
 comment5.params=
 comment5.target=Rocket\ getmyRocket()
-numComments=6
+comment6.params=
+comment6.target=void\ gameOver()
+numComments=7

@@ -10,7 +10,7 @@ public class Space extends GraphicsProgram
     private Rocket myRocket;
     private GStar myStars;
     private Planet myPlanet;
-    private Asteroid myAsteroid;
+    private Asteroid myAsteroid, myAsteroid1;
     private double myAngle = 90;
 
     public void init()
@@ -21,10 +21,10 @@ public class Space extends GraphicsProgram
         myRocket = new Rocket(c);
 
         myRocket.addVertex(getWidth()/2, getHeight()/2);
-        myRocket.addVertex(getWidth()/2 + 14, getHeight()/2 - 21);
-        myRocket.addVertex(getWidth()/2 + 14, getHeight()/2 + 21);
-        myRocket.addVertex(getWidth()/2 - 14, getHeight()/2 - 21);
-        myRocket.addVertex(getWidth()/2 - 14 ,getHeight()/2 + 21);
+        myRocket.addVertex(getWidth()/2 + 11, getHeight()/2 - 18);
+        myRocket.addVertex(getWidth()/2 + 11, getHeight()/2 + 18);
+        myRocket.addVertex(getWidth()/2 - 11, getHeight()/2 - 18);
+        myRocket.addVertex(getWidth()/2 - 11, getHeight()/2 + 18);
 
         myStars = new GStar(16, 17, 8);
         add(myStars);
@@ -88,14 +88,23 @@ public class Space extends GraphicsProgram
 
         add(myRocket);
 
+<<<<<<< Updated upstream
         myAsteroid = new Asteroid(Color.WHITE, 3, 2);
 
+=======
+        myAsteroid = new Asteroid(Color.WHITE, 0, 2);
+>>>>>>> Stashed changes
         myAsteroid.addVertex(getWidth()/2, getHeight()/2 -360);
         myAsteroid.addVertex(getWidth()/2 -24 , getHeight()/2 - 345);
         myAsteroid.addVertex(getWidth()/2 + 36, getHeight()/2 - 345);
         myAsteroid.addArc(100, 90, 10, 40);
-        add(myRocket);
         add(myAsteroid);
+
+        myAsteroid1 = new Asteroid(Color.WHITE, 1, 1);
+        myAsteroid1.addVertex(-20, getHeight()/2 -360);
+        myAsteroid1.addVertex(-44, getHeight()/2 - 345);
+        myAsteroid1.addVertex(16, getHeight()/2 - 345);
+        add(myAsteroid1);
 
         setBackground(Color.BLACK);
         myRocket.setLocation(getWidth()/2, getHeight()/2);
@@ -106,16 +115,24 @@ public class Space extends GraphicsProgram
 
         addKeyListeners();
     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     public void run()
     {
         while (true)
         {
             for (int k = 0 ; k < 1 ; k++)
-                myAsteroid.move();
-
+                myAsteroid.move(); myAsteroid1.move();
+           
             pause(15);
         }
     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     public void mouseMoved(MouseEvent e)
     {
         double Y0 = e.getY();
@@ -171,15 +188,26 @@ public class Space extends GraphicsProgram
     {
         return myRocket;
     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     public void gameOver()
     {
         double Ay = myAsteroid.getY();
         double Ax = myAsteroid.getX();
         double Ry = myRocket.getY();
         double Rx = myRocket.getX();
+<<<<<<< Updated upstream
             //while (Ay = Ry && Ax = Rx)
             {
                 //asawr
             }
+=======
+        //while (Ay = Ry && Ax = Rx)
+        {
+            //asawr
+        }
+>>>>>>> Stashed changes
     }
 }
