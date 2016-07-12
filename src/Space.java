@@ -14,7 +14,7 @@ public class Space extends GraphicsProgram
     private double myAngle = 90;
 
     public void init()
-        {
+    {
         Color c = new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()));
         Color d = new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()));
 
@@ -88,21 +88,33 @@ public class Space extends GraphicsProgram
 
         add(myRocket);
 
-        myAsteroid = new Asteroid(Color.WHITE, 3, 2);
 
-        myAsteroid = new Asteroid(Color.WHITE, 0, 2);
 
+
+        myAsteroid = new Asteroid(Color.WHITE, 1, 2, this);
         myAsteroid.addVertex(getWidth()/2, getHeight()/2 -360);
         myAsteroid.addVertex(getWidth()/2 -24 , getHeight()/2 - 345);
         myAsteroid.addVertex(getWidth()/2 + 36, getHeight()/2 - 345);
         myAsteroid.addArc(100, 90, 10, 40);
+        myAsteroid.recenter();
         add(myAsteroid);
 
-        myAsteroid1 = new Asteroid(Color.WHITE, 1, 1);
+        myAsteroid1 = new Asteroid(Color.WHITE, 1, 1, this);
         myAsteroid1.addVertex(-20, getHeight()/2 -360);
         myAsteroid1.addVertex(-44, getHeight()/2 - 345);
         myAsteroid1.addVertex(16, getHeight()/2 - 345);
+        myAsteroid1.recenter();
         add(myAsteroid1);
+
+        myAsteroid2 = new Asteroid(Color.WHITE,0, 1, this);
+        myAsteroid2.addVertex(getWidth()/2 +30, getHeight()/2 + 180);
+        myAsteroid2.addVertex(getWidth()/2 -18, getHeight()/2 + 203);
+        myAsteroid2.addVertex(getWidth()/2 + 28, getHeight()/2 + 161);
+        myAsteroid2.recenter();
+        myAsteroid2.setLocation(100, 100);
+        add(myAsteroid2);
+
+
 
         setBackground(Color.BLACK);
         myRocket.setLocation(getWidth()/2, getHeight()/2);
@@ -113,6 +125,7 @@ public class Space extends GraphicsProgram
 
         addKeyListeners();
     }
+
     public void run()
     {
         while (true)
@@ -120,9 +133,15 @@ public class Space extends GraphicsProgram
             for (int k = 0 ; k < 1 ; k++)
                 myAsteroid.move();
 
+
+                myAsteroid.move();
+                myAsteroid1.move();
+               myAsteroid2.move();
+
             pause(15);
         }
     }
+
     public void mouseMoved(MouseEvent e)
     {
         double Y0 = e.getY();
@@ -178,15 +197,14 @@ public class Space extends GraphicsProgram
     {
         return myRocket;
     }
+
     public void gameOver()
     {
         double Ay = myAsteroid.getY();
         double Ax = myAsteroid.getX();
         double Ry = myRocket.getY();
         double Rx = myRocket.getX();
-            //while (Ay = Ry && Ax = Rx)
-            {
-                //asawr
-            }
+
+    }
     }
 }
