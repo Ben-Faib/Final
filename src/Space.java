@@ -10,7 +10,7 @@ public class Space extends GraphicsProgram
     private Rocket myRocket;
     private GStar myStars;
     private Planet myPlanet;
-    private Asteroid myAsteroid, myAsteroid1;
+    private Asteroid myAsteroid, myAsteroid1,myAsteroid2,getMyAsteroid3,getMyAsteroid4,getMyAsteroid5,getMyAsteroid6;
     private double myAngle = 90;
 
     public void init()
@@ -20,11 +20,11 @@ public class Space extends GraphicsProgram
 
         myRocket = new Rocket(c);
 
-        myRocket.addVertex(getWidth()/2, getHeight()/2);
-        myRocket.addVertex(getWidth()/2 + 11, getHeight()/2 - 18);
-        myRocket.addVertex(getWidth()/2 + 11, getHeight()/2 + 18);
-        myRocket.addVertex(getWidth()/2 - 11, getHeight()/2 - 18);
-        myRocket.addVertex(getWidth()/2 - 11, getHeight()/2 + 18);
+        myRocket.addVertex(getWidth() / 2, getHeight() / 2);
+        myRocket.addVertex(getWidth() / 2 + 11, getHeight() / 2 - 18);
+        myRocket.addVertex(getWidth() / 2 + 11, getHeight() / 2 + 18);
+        myRocket.addVertex(getWidth() / 2 - 11, getHeight() / 2 - 18);
+        myRocket.addVertex(getWidth() / 2 - 11, getHeight() / 2 + 18);
 
         myStars = new GStar(16, 17, 8);
         add(myStars);
@@ -117,7 +117,7 @@ public class Space extends GraphicsProgram
 
 
         setBackground(Color.BLACK);
-        myRocket.setLocation(getWidth()/2, getHeight()/2);
+        myRocket.setLocation(getWidth() / 2, getHeight() / 2);
 
         myRocket.recenter();
 
@@ -204,7 +204,11 @@ public class Space extends GraphicsProgram
         double Ax = myAsteroid.getX();
         double Ry = myRocket.getY();
         double Rx = myRocket.getX();
-
-    }
+            //while (Ay = Ry && Ax = Rx)
+            {
+                myAsteroid.sendBackward();
+                myRocket.sendBackward();
+                System.out.println("Game Over!");
+            }
     }
 }

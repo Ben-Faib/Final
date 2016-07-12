@@ -4,8 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.Color;
 
 public class Rocket extends GPolygon
-{ 
-
+{
     private Space mySpace;
 
     public Rocket(Color c)
@@ -15,8 +14,10 @@ public class Rocket extends GPolygon
         setFilled(true);
     }
 
-    public void move()
+    public void move(double dx, double dy)
     {
+        super.move(dx, dy);
+
         if (getX()<=0)
         {
             setLocation(750, getY());
@@ -31,7 +32,7 @@ public class Rocket extends GPolygon
         }
         if (getY()>= 450)
         {
-            setLocation(getX(), 10);
+            setLocation(this.getX(), 10);
         }
     }
 }
