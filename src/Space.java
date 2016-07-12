@@ -181,7 +181,7 @@ public class Space extends GraphicsProgram
         double Rx = myRocket.getX();
             //while (Ay = Ry && Ax = Rx)
             {
-
+                //asawr
             }
     }
 }
