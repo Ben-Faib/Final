@@ -20,18 +20,18 @@ public class Asteroid extends GPolygon
 
     public void move()
     {
-        if (getY()<0) {
-            
-            myYVelocity = 2;
-            
-        }
         if (getY()> 700) {
-            myYVelocity = -4;
+            myYVelocity = -myYVelocity -1;
+
+        }
+       if (getX()> 700) {
+          myXVelocity = -myXVelocity - 1;
         }
         
-        
+       if (getX()< -50) {
+           myXVelocity = -myXVelocity + 1;
+        }
         super.move(myXVelocity, myYVelocity);
     }
-    
-    
 }
+

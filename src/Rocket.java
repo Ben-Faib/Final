@@ -18,7 +18,20 @@ public class Rocket extends GPolygon
     public void move()
     {
         if (getX()<=0)
-        setLocation(getX() + 300, getY());
-}
-
+        {
+            setLocation(750, getY());
+        }
+        if (getX()>= 753)
+        {
+            setLocation(10, getY());
+        }
+        if (getY()<= 0)
+        {
+            setLocation(getX(), 445);
+        }
+        if (getY()>= 450)
+        {
+            setLocation(getX(), 10);
+        }
+    }
 }
