@@ -8,19 +8,26 @@ public class Asteroid extends GPolygon
     private double myXVelocity;
     private double myYVelocity;
     private Space mySpace;
+    private GLabel myLabel;
 
-    public Asteroid(Color s, double XVel, double YVel)
+    public Asteroid(Color s, double XVel, double YVel, Space space)
     {
         setColor(Color.WHITE); 
         setFillColor(Color.WHITE);
 
         myXVelocity = XVel;
         myYVelocity = YVel;
+        myLabel = new GLabel("", 20, 20);
+        myLabel.setColor(Color.WHITE);
+        space.add(myLabel);
     }
 
     public void move()
     {
-        if (getY()> 630) {
+      
+       myLabel.setLabel("x:" + getX() + " y:" + getY() + " XV:" +myXVelocity + " YV:" + myYVelocity);
+        
+        if (getY()> 479) {
             if(myYVelocity>0 && myXVelocity == 0) {
             myYVelocity = -myYVelocity -.5;
         }
@@ -48,13 +55,13 @@ public class Asteroid extends GPolygon
         }
     }
     
-       if (getX()> 500) {
-          myXVelocity = -myXVelocity - .5;
-        }
+     //  if (getX()> 500) {
+        //  myXVelocity = -myXVelocity - .5;
+     //   }
         
-       if (getX()< -10) {
-           myXVelocity = -myXVelocity + .5;
-        }
+    //   if (getX()< -10) {
+       //    myXVelocity = -myXVelocity + .5;
+      //  }
         super.move(myXVelocity, myYVelocity);
     }
 }
