@@ -88,7 +88,7 @@ public class Space extends GraphicsProgram
 
         add(myRocket);
 
-        myAsteroid = new Asteroid(Color.WHITE, 0, 2);
+        myAsteroid = new Asteroid(Color.WHITE, 3, 2);
 
         myAsteroid.addVertex(getWidth()/2, getHeight()/2 -360);
         myAsteroid.addVertex(getWidth()/2 -24 , getHeight()/2 - 345);
@@ -108,8 +108,6 @@ public class Space extends GraphicsProgram
 
         addKeyListeners();
     }
-
-
     public void run()
     {
         while (true)
@@ -120,8 +118,6 @@ public class Space extends GraphicsProgram
             pause(15);
         }
     }
-
-
     public void mouseMoved(MouseEvent e)
     {
         double Y0 = e.getY();
@@ -132,7 +128,6 @@ public class Space extends GraphicsProgram
         myRocket.rotate(newAngle - myAngle);
         myAngle = newAngle;
     }
-
     public void keyPressed(KeyEvent e)
     {
         System.out.println(e.getKeyChar());
@@ -169,7 +164,6 @@ public class Space extends GraphicsProgram
             myRocket.move( -35, 35);
         }
     }
-
     public static void main(String[]args)
     {
         new Space().start();
@@ -178,5 +172,16 @@ public class Space extends GraphicsProgram
     public Rocket getmyRocket()
     {
         return myRocket;
+    }
+    public void gameOver()
+    {
+        double Ay = myAsteroid.getY();
+        double Ax = myAsteroid.getX();
+        double Ry = myRocket.getY();
+        double Rx = myRocket.getX();
+            //while (Ay = Ry && Ax = Rx)
+            {
+
+            }
     }
 }

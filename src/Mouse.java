@@ -25,7 +25,6 @@ public class Mouse extends GraphicsProgram
         }
 
     }
-
     public void mouseMoved(MouseEvent e)
     {
         myMouse.setLabel("X:" + e.getX() + " Y:" + e.getY());
