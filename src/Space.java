@@ -14,7 +14,7 @@ public class Space extends GraphicsProgram
     private double myAngle = 90;
     private boolean RunGame = false;
     private GLabel myStart;
-    private GLabel myInstructions1, myInstructions2, myInstructions3, myInstructions4;
+    private GLabel myInstructions1, myInstructions2, myInstructions3, myInstructions4,myInstructions5;
 
     public void init()
     {
@@ -200,7 +200,6 @@ public class Space extends GraphicsProgram
         {
             x += 1;
             System.out.println("Waiting");
-            myRocket.recenter();
         }
 
         remove (myStart);
@@ -229,53 +228,62 @@ public class Space extends GraphicsProgram
 
     public void mouseMoved(MouseEvent e)
     {
-        double Y0 = e.getY();
-        double X0 = e.getX();
-        double Y1 = myRocket.getY();
-        double X1 = myRocket.getX();
-        double newAngle = GMath.angle(X0, Y0,X1, Y1);
-        myRocket.rotate(newAngle - myAngle);
-        myAngle = newAngle;
+        if (RunGame) {
+            double Y0 = e.getY();
+            double X0 = e.getX();
+            double Y1 = myRocket.getY();
+            double X1 = myRocket.getX();
+            double newAngle = GMath.angle(X0, Y0,X1, Y1);
+            myRocket.rotate(newAngle - myAngle);
+            myAngle = newAngle;
+        }
     }
 
     public void keyPressed(KeyEvent e)
     {
         System.out.println(e.getKeyChar());
-        if (e.getKeyChar() == 'w')
+        if (RunGame)
         {
-            myRocket.move( 0, -35);
-        }
-        if (e.getKeyChar() == 'd')
-        {
-            myRocket.move( 35, 0);
-        }
-        if (e.getKeyChar() == 's')
-        {
-            myRocket.move( 0, 35);
-        }
-        if (e.getKeyChar() == 'a')
-        {
-            myRocket.move( -35, 0);
-        }
-        if (e.getKeyChar() == 'q')
-        {
-            myRocket.move( -35, -35);
-        }
-        if (e.getKeyChar() == 'e')
-        {
-            myRocket.move( 35, -35);
-        }
-        if (e.getKeyChar() == 'c')
-        {
-            myRocket.move( 35, 35);
-        }
-        if (e.getKeyChar() =='z')
-        {
-            myRocket.move( -35, 35);
+            if (e.getKeyChar() == 'w')
+            {
+                myRocket.move( 0, -35);
+            }
+            if (e.getKeyChar() == 'd')
+            {
+                myRocket.move( 35, 0);
+            }
+            if (e.getKeyChar() == 's')
+            {
+                myRocket.move( 0, 35);
+            }
+            if (e.getKeyChar() == 'a')
+            {
+                myRocket.move( -35, 0);
+            }
+            if (e.getKeyChar() == 'q')
+            {
+                myRocket.move( -35, -35);
+            }
+            if (e.getKeyChar() == 'e')
+            {
+                myRocket.move( 35, -35);
+            }
+            if (e.getKeyChar() == 'c')
+            {
+                myRocket.move( 35, 35);
+            }
+            if (e.getKeyChar() =='z')
+            {
+                myRocket.move( -35, 35);
+            }
         }
         if (e.getKeyChar() == 'k')
         {
             RunGame = true;
+        }
+        if (e.getKeyChar() == 'r')
+        {
+            remove (myInstructions5);
         }
     }
 
@@ -294,34 +302,58 @@ public class Space extends GraphicsProgram
        if (myRocket.getBounds().intersects(myAsteroid.getBounds()))
         {
             RunGame = false;
+            myInstructions5 = new GLabel("Game Over!", 325, 220);
+            myInstructions5.setColor(Color.WHITE);
+            add(myInstructions5);
         }
         if (myRocket.getBounds().intersects(myAsteroid1.getBounds()))
         {
             RunGame = false;
+            myInstructions5 = new GLabel("Game Over!", 325, 220);
+            myInstructions5.setColor(Color.WHITE);
+            add(myInstructions5);
         }
         if (myRocket.getBounds().intersects(myAsteroid2.getBounds()))
         {
             RunGame = false;
+            myInstructions5 = new GLabel("Game Over!", 325, 220);
+            myInstructions5.setColor(Color.WHITE);
+            add(myInstructions5);
         }
         if (myRocket.getBounds().intersects(myAsteroid3.getBounds()))
         {
             RunGame = false;
+            myInstructions5 = new GLabel("Game Over!", 325, 220);
+            myInstructions5.setColor(Color.WHITE);
+            add(myInstructions5);
         }
         if (myRocket.getBounds().intersects(myAsteroid4.getBounds()))
         {
             RunGame = false;
+            myInstructions5 = new GLabel("Game Over!", 325, 220);
+            myInstructions5.setColor(Color.WHITE);
+            add(myInstructions5);
         }
         if (myRocket.getBounds().intersects(myAsteroid5.getBounds()))
         {
             RunGame = false;
+            myInstructions5 = new GLabel("Game Over!", 325, 220);
+            myInstructions5.setColor(Color.WHITE);
+            add(myInstructions5);
         }
         if (myRocket.getBounds().intersects(myAsteroid6.getBounds()))
         {
             RunGame = false;
+            myInstructions5 = new GLabel("Game Over!", 325, 220);
+            myInstructions5.setColor(Color.WHITE);
+            add(myInstructions5);
         }
         if (myRocket.getBounds().intersects(myAsteroid7.getBounds()))
         {
             RunGame = false;
+            myInstructions5 = new GLabel("Game Over!", 325, 220);
+            myInstructions5.setColor(Color.WHITE);
+            add(myInstructions5);
         }
     }
 }
