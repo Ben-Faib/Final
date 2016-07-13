@@ -12,6 +12,7 @@ public class Space extends GraphicsProgram
     private Planet myPlanet;
     private Asteroid myAsteroid, myAsteroid1,myAsteroid2, myAsteroid3 , myAsteroid4, myAsteroid5, myAsteroid6, myAsteroid7, myAsteroid8, myAsteroid9, myAsteroid10;
     private double myAngle = 90;
+    private boolean RunGame = false;
 
     public void init()
     {
@@ -172,7 +173,14 @@ public class Space extends GraphicsProgram
 
     public void run()
     {
-        while (true)
+        int x = 0;
+        while (RunGame == false)
+        {
+            x += 1;
+            System.out.println("Waiting");
+        }
+       
+        while (RunGame == true)
         {
             for (int k = 0 ; k < 1 ; k++)
                 myAsteroid.move();
@@ -236,6 +244,10 @@ public class Space extends GraphicsProgram
         {
             myRocket.move( -35, 35);
         }
+        if (e.getKeyChar() == 'k')
+        {
+            RunGame = true;
+        }
     }
 
     public static void main(String[]args)
@@ -250,15 +262,5 @@ public class Space extends GraphicsProgram
 
     public void gameOver()
     {
-        double Ay = myAsteroid.getY();
-        double Ax = myAsteroid.getX();
-        double Ry = myRocket.getY();
-        double Rx = myRocket.getX();
-        //while (Ay = Ry && Ax = Rx)
-        {
-            myAsteroid.sendBackward();
-            myRocket.sendBackward();
-            System.out.println("Game Over!");
-        }
     }
 }
