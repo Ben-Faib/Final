@@ -10,7 +10,7 @@ public class Space extends GraphicsProgram
     private Rocket myRocket;
     private GStar myStars;
     private Planet myPlanet;
-    private Asteroid myAsteroid, myAsteroid1,myAsteroid2, myAsteroid3 ,myAsteroid4,myAsteroid5,myAsteroid6;
+    private Asteroid myAsteroid, myAsteroid1,myAsteroid2, myAsteroid3 , myAsteroid4, myAsteroid5, myAsteroid6, myAsteroid7, myAsteroid8, myAsteroid9, myAsteroid10;
     private double myAngle = 90;
 
     public void init()
@@ -94,7 +94,7 @@ public class Space extends GraphicsProgram
         myAsteroid.addVertex(getWidth()/2 + 36, getHeight()/2 - 345);
         myAsteroid.addArc(100, 90, 10, 40);
         myAsteroid.recenter();
-        myAsteroid.setLocation(21,13);
+        myAsteroid.setLocation(21,17);
         add(myAsteroid);
 
         myAsteroid1 = new Asteroid(Color.WHITE, 1.3, 1.1, this);
@@ -102,7 +102,7 @@ public class Space extends GraphicsProgram
         myAsteroid1.addVertex(-44, getHeight()/2 - 345);
         myAsteroid1.addVertex(16, getHeight()/2 - 345);
         myAsteroid1.recenter();
-        myAsteroid1.setLocation(180, 11);
+        myAsteroid1.setLocation(180, 17);
         add(myAsteroid1);
 
         myAsteroid2 = new Asteroid(Color.WHITE, 1.4, 1.2, this);
@@ -131,6 +131,34 @@ public class Space extends GraphicsProgram
         myAsteroid4.setLocation(450, 300);
         add(myAsteroid4);
         
+        myAsteroid5 = new Asteroid(Color.WHITE, .7 , -.6 , this);
+        myAsteroid5.addVertex(50, 190);
+        myAsteroid5.addVertex(30, 160);
+        myAsteroid5.addVertex(60, 140);
+        myAsteroid5.addVertex(70, 150);
+        myAsteroid5.recenter();
+        myAsteroid5.setLocation(200, 450);
+        add(myAsteroid5);
+        
+        myAsteroid6 = new Asteroid(Color.WHITE, -.7 , .7 , this);
+        myAsteroid6.addVertex(40, 190);
+        myAsteroid6.addVertex(30, 160);
+        myAsteroid6.addVertex(47, 140);
+        myAsteroid6.addVertex(50, 150);
+        myAsteroid6.recenter();
+        myAsteroid6.setLocation(300, 430);
+        add(myAsteroid6);
+        
+        myAsteroid7 = new Asteroid(Color.WHITE, -.7 , -.8 , this);
+        myAsteroid7.addVertex(70, 201);
+        myAsteroid7.addVertex(90, 205);
+        myAsteroid7.addVertex(90, 158);
+        myAsteroid7.addVertex(70, 162);
+        myAsteroid7.recenter();
+        myAsteroid7.setLocation(400, 450);
+       
+        
+        add(myAsteroid7);
         
         setBackground(Color.BLACK);
         myRocket.setLocation(getWidth() / 2, getHeight() / 2);
@@ -154,8 +182,11 @@ public class Space extends GraphicsProgram
             myAsteroid2.move();
             myAsteroid3.move();
             myAsteroid4.move();
+            myAsteroid5.move();
+            myAsteroid6.move();
+            myAsteroid7.move();
 
-            pause(15);
+            pause(17);
         }
     }
 

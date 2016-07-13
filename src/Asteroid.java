@@ -25,7 +25,7 @@ public class Asteroid extends GPolygon
       
 
              
-        if (getY()> 479) {
+        if (getY()> 470) {
             
            myYVelocity = -myYVelocity;
           
@@ -41,7 +41,7 @@ public class Asteroid extends GPolygon
             myXVelocity = -myXVelocity;
         }
         
-        if (getY() <= 10) {
+        if (getY() <= 16) {
             myYVelocity = -myYVelocity;
            
         } 
