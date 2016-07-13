@@ -124,7 +124,7 @@ public class Space extends GraphicsProgram
         myAsteroid3.recenter();
         myAsteroid3.setLocation(400, 100);
         add(myAsteroid3);
-        
+
         myAsteroid4 = new Asteroid(Color.WHITE, .7 , .6 , this);
         myAsteroid4.addVertex(50, 180);
         myAsteroid4.addVertex(30, 170);
@@ -133,7 +133,7 @@ public class Space extends GraphicsProgram
         myAsteroid4.recenter();
         myAsteroid4.setLocation(450, 300);
         add(myAsteroid4);
-        
+
         myAsteroid5 = new Asteroid(Color.WHITE, .7 , -.6 , this);
         myAsteroid5.addVertex(50, 190);
         myAsteroid5.addVertex(30, 160);
@@ -142,7 +142,7 @@ public class Space extends GraphicsProgram
         myAsteroid5.recenter();
         myAsteroid5.setLocation(200, 450);
         add(myAsteroid5);
-        
+
         myAsteroid6 = new Asteroid(Color.WHITE, -.7 , .7 , this);
         myAsteroid6.addVertex(40, 190);
         myAsteroid6.addVertex(30, 160);
@@ -151,7 +151,7 @@ public class Space extends GraphicsProgram
         myAsteroid6.recenter();
         myAsteroid6.setLocation(300, 430);
         add(myAsteroid6);
-        
+
         myAsteroid7 = new Asteroid(Color.WHITE, -.7 , -.8 , this);
         myAsteroid7.addVertex(70, 201);
         myAsteroid7.addVertex(90, 205);
@@ -159,35 +159,35 @@ public class Space extends GraphicsProgram
         myAsteroid7.addVertex(70, 162);
         myAsteroid7.recenter();
         myAsteroid7.setLocation(400, 450);
-       
-        
+
+
         add(myAsteroid7);
-        
+
         setBackground(Color.BLACK);
         myRocket.setLocation(getWidth() / 2, getHeight() / 2);
 
         myRocket.recenter();
-        
+
         myStart = new GLabel("Press 'K' To Start Game", 325, 220);
         myStart.setColor(Color.WHITE);
         add(myStart);
-        
+
         myInstructions1 = new GLabel("Before Starting The Game, Click On The Game", 60, 140);
         myInstructions1.setColor(Color.WHITE);
         add(myInstructions1);
-         
+
         myInstructions2 = new GLabel("Movement: 'W' , 'A' , 'S' , 'D'", 60, 158);
         myInstructions2.setColor(Color.WHITE);
         add(myInstructions2);
-        
+
         myInstructions3 = new GLabel("Diagonal Movement: 'Q' , 'E' , 'Z' , 'C'", 60, 176);
         myInstructions3.setColor(Color.WHITE);
         add(myInstructions3);
-        
+
         myInstructions4 = new GLabel("Use Mouse To Aim And Space To Shoot", 60, 220);
         myInstructions4.setColor(Color.WHITE);
         add(myInstructions4);
-        
+
         addMouseListeners();
 
         addKeyListeners();
@@ -200,13 +200,14 @@ public class Space extends GraphicsProgram
         {
             x += 1;
             System.out.println("Waiting");
+            myRocket.recenter();
         }
-       
+
         remove (myStart);
         remove (myInstructions1);
         remove (myInstructions2);
         remove (myInstructions3);
-        remove (myInstructions4); 
+        remove (myInstructions4);
         while (RunGame == true)
         {
             for (int k = 0 ; k < 1 ; k++)
@@ -221,6 +222,7 @@ public class Space extends GraphicsProgram
             myAsteroid6.move();
             myAsteroid7.move();
 
+            gameOver();
             pause(17);
         }
     }
@@ -289,5 +291,37 @@ public class Space extends GraphicsProgram
 
     public void gameOver()
     {
+       if (myRocket.getBounds().intersects(myAsteroid.getBounds()))
+        {
+            RunGame = false;
+        }
+        if (myRocket.getBounds().intersects(myAsteroid1.getBounds()))
+        {
+            RunGame = false;
+        }
+        if (myRocket.getBounds().intersects(myAsteroid2.getBounds()))
+        {
+            RunGame = false;
+        }
+        if (myRocket.getBounds().intersects(myAsteroid3.getBounds()))
+        {
+            RunGame = false;
+        }
+        if (myRocket.getBounds().intersects(myAsteroid4.getBounds()))
+        {
+            RunGame = false;
+        }
+        if (myRocket.getBounds().intersects(myAsteroid5.getBounds()))
+        {
+            RunGame = false;
+        }
+        if (myRocket.getBounds().intersects(myAsteroid6.getBounds()))
+        {
+            RunGame = false;
+        }
+        if (myRocket.getBounds().intersects(myAsteroid7.getBounds()))
+        {
+            RunGame = false;
+        }
     }
 }
