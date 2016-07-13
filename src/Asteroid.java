@@ -8,7 +8,7 @@ public class Asteroid extends GPolygon
     private double myXVelocity;
     private double myYVelocity;
     private Space mySpace;
-   // private GLabel myLabel;
+   
 
     public Asteroid(Color s, double XVel, double YVel, Space space)
     {

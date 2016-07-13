@@ -10,9 +10,11 @@ public class Space extends GraphicsProgram
     private Rocket myRocket;
     private GStar myStars;
     private Planet myPlanet;
-    private Asteroid myAsteroid, myAsteroid1,myAsteroid2, myAsteroid3 , myAsteroid4, myAsteroid5, myAsteroid6, myAsteroid7, myAsteroid8, myAsteroid9, myAsteroid10;
+    private Asteroid myAsteroid, myAsteroid1, myAsteroid2, myAsteroid3 , myAsteroid4, myAsteroid5, myAsteroid6, myAsteroid7, myAsteroid8, myAsteroid9, myAsteroid10;
     private double myAngle = 90;
     private boolean RunGame = false;
+    private GLabel myStart;
+    private GLabel myInstructions1, myInstructions2, myInstructions3, myInstructions4;
 
     public void init()
     {
@@ -165,7 +167,27 @@ public class Space extends GraphicsProgram
         myRocket.setLocation(getWidth() / 2, getHeight() / 2);
 
         myRocket.recenter();
-
+        
+        myStart = new GLabel("Press 'K' To Start Game", 325, 220);
+        myStart.setColor(Color.WHITE);
+        add(myStart);
+        
+        myInstructions1 = new GLabel("Before Starting The Game, Click On The Game", 60, 140);
+        myInstructions1.setColor(Color.WHITE);
+        add(myInstructions1);
+         
+        myInstructions2 = new GLabel("Movement: 'W' , 'A' , 'S' , 'D'", 60, 158);
+        myInstructions2.setColor(Color.WHITE);
+        add(myInstructions2);
+        
+        myInstructions3 = new GLabel("Diagonal Movement: 'Q' , 'E' , 'Z' , 'C'", 60, 176);
+        myInstructions3.setColor(Color.WHITE);
+        add(myInstructions3);
+        
+        myInstructions4 = new GLabel("Use Mouse To Aim And Space To Shoot", 60, 220);
+        myInstructions4.setColor(Color.WHITE);
+        add(myInstructions4);
+        
         addMouseListeners();
 
         addKeyListeners();
@@ -180,6 +202,11 @@ public class Space extends GraphicsProgram
             System.out.println("Waiting");
         }
        
+        remove (myStart);
+        remove (myInstructions1);
+        remove (myInstructions2);
+        remove (myInstructions3);
+        remove (myInstructions4); 
         while (RunGame == true)
         {
             for (int k = 0 ; k < 1 ; k++)
