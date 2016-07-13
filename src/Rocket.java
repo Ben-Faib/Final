@@ -9,7 +9,7 @@ public class Rocket extends GPolygon
 
     public Rocket(Color c)
     {
-        setColor(c); 
+        setColor(Color.LIGHT_GRAY);
         setFillColor(c);
         setFilled(true);
     }
