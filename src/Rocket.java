@@ -48,8 +48,8 @@ public class Rocket extends GPolygon
 
     public Missile shoot()
     {
-        double VXM = 4*Math.cos(myAngle);
-        double VYM = 4*Math.sin(myAngle);
+        double VXM = 4*Math.sin(myAngle);
+        double VYM = 4*Math.cos(myAngle);
 
         Missile missile = new Missile(getX(), getY(), 8, VXM, VYM, Color.WHITE);
         return missile;

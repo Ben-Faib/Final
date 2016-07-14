@@ -13,6 +13,7 @@ public class Space extends GraphicsProgram
     private Planet myPlanet;
     private Asteroid myAsteroid, myAsteroid1, myAsteroid2, myAsteroid3 , myAsteroid4, myAsteroid5, myAsteroid6, myAsteroid7;
     private GLabel myStart;
+
     private boolean RunGame = false;
     private GLabel myInstructions1, myInstructions2, myInstructions3, myInstructions4, myGameOver;
     private GLabel myRestart;
@@ -214,6 +215,9 @@ public class Space extends GraphicsProgram
             while (RunGame == true)
             {
 
+                for (int k = 0 ; k < 1 ; k++)
+                    myAsteroid.move();
+
                 myAsteroid.move();
                 myAsteroid1.move();
                 myAsteroid2.move();
@@ -222,6 +226,7 @@ public class Space extends GraphicsProgram
                 myAsteroid5.move();
                 myAsteroid6.move();
                 myAsteroid7.move();
+
                 ArrayList <Missile> missileToRemove = new ArrayList <> ();
 
                 for (int k = 0; k< myMissiles.size(); k++) 
@@ -248,8 +253,11 @@ public class Space extends GraphicsProgram
             double Y1 = myRocket.getY();
             double X1 = myRocket.getX();
             double newAngle = GMath.angle(X0, Y0,X1, Y1);
+
             myRocket.rotate(newAngle - myRocket.getAngle());
             myRocket.setAngle(newAngle);
+
+
         }
     }
 
@@ -262,6 +270,7 @@ public class Space extends GraphicsProgram
             {
                 myRocket.move( 0, -35);
             }
+
             else if (e.getKeyChar() == 'd')
             {
                 myRocket.move( 35, 0);
@@ -299,6 +308,36 @@ public class Space extends GraphicsProgram
                     add(newMissile);
                 }   
             }
+
+            if (e.getKeyChar() == 'd')
+            {
+                myRocket.move( 35, 0);
+            }
+            if (e.getKeyChar() == 's')
+            {
+                myRocket.move( 0, 35);
+            }
+            if (e.getKeyChar() == 'a')
+            {
+                myRocket.move( -35, 0);
+            }
+            if (e.getKeyChar() == 'q')
+            {
+                myRocket.move( -35, -35);
+            }
+            if (e.getKeyChar() == 'e')
+            {
+                myRocket.move( 35, -35);
+            }
+            if (e.getKeyChar() == 'c')
+            {
+                myRocket.move( 35, 35);
+            }
+            if (e.getKeyChar() =='z')
+            {
+                myRocket.move( -35, 35);
+            }
+
         }
         if (e.getKeyChar() == 'k')
         {
@@ -307,6 +346,7 @@ public class Space extends GraphicsProgram
         if (e.getKeyChar() == 'r')
         {
             Color c = new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random()));
+
             remove (myGameOver);
             remove (myRestart);
             myAsteroid.setLocation(21,17);
@@ -339,10 +379,12 @@ public class Space extends GraphicsProgram
         if (myRocket.getBounds().intersects(myAsteroid.getBounds()))
         {
             RunGame = false;
+
             myGameOver = new GLabel("Game Over!", 325, 220);
             myGameOver.setColor(Color.WHITE);
             add(myGameOver);
 
+           
             myRestart = new GLabel("Press 'R' to Restart", 325, 240);
             myRestart.setColor(Color.WHITE);
             add(myRestart);
@@ -350,10 +392,12 @@ public class Space extends GraphicsProgram
         if (myRocket.getBounds().intersects(myAsteroid1.getBounds()))
         {
             RunGame = false;
+
             myGameOver = new GLabel("Game Over!", 325, 220);
             myGameOver.setColor(Color.WHITE);
             add(myGameOver);
 
+          
             myRestart = new GLabel("Press 'R' to Restart", 325, 240);
             myRestart.setColor(Color.WHITE);
             add(myRestart);
@@ -361,10 +405,12 @@ public class Space extends GraphicsProgram
         if (myRocket.getBounds().intersects(myAsteroid2.getBounds()))
         {
             RunGame = false;
+
             myGameOver = new GLabel("Game Over!", 325, 220);
             myGameOver.setColor(Color.WHITE);
             add(myGameOver);
 
+            
             myRestart = new GLabel("Press 'R' to Restart", 325, 240);
             myRestart.setColor(Color.WHITE);
             add(myRestart);
@@ -372,10 +418,12 @@ public class Space extends GraphicsProgram
         if (myRocket.getBounds().intersects(myAsteroid3.getBounds()))
         {
             RunGame = false;
+
             myGameOver = new GLabel("Game Over!", 325, 220);
             myGameOver.setColor(Color.WHITE);
             add(myGameOver);
 
+            
             myRestart = new GLabel("Press 'R' to Restart", 325, 240);
             myRestart.setColor(Color.WHITE);
             add(myRestart);
@@ -383,10 +431,12 @@ public class Space extends GraphicsProgram
         if (myRocket.getBounds().intersects(myAsteroid4.getBounds()))
         {
             RunGame = false;
+
             myGameOver = new GLabel("Game Over!", 325, 220);
             myGameOver.setColor(Color.WHITE);
             add(myGameOver);
 
+            
             myRestart = new GLabel("Press 'R' to Restart", 325, 240);
             myRestart.setColor(Color.WHITE);
             add(myRestart);
@@ -394,10 +444,12 @@ public class Space extends GraphicsProgram
         if (myRocket.getBounds().intersects(myAsteroid5.getBounds()))
         {
             RunGame = false;
+
             myGameOver = new GLabel("Game Over!", 325, 220);
             myGameOver.setColor(Color.WHITE);
             add(myGameOver);
 
+          
             myRestart = new GLabel("Press 'R' to Restart", 325, 240);
             myRestart.setColor(Color.WHITE);
             add(myRestart);
@@ -405,10 +457,12 @@ public class Space extends GraphicsProgram
         if (myRocket.getBounds().intersects(myAsteroid6.getBounds()))
         {
             RunGame = false;
+
             myGameOver = new GLabel("Game Over!", 325, 220);
             myGameOver.setColor(Color.WHITE);
             add(myGameOver);
 
+           
             myRestart = new GLabel("Press 'R' to Restart", 325, 240);
             myRestart.setColor(Color.WHITE);
             add(myRestart);
@@ -416,6 +470,7 @@ public class Space extends GraphicsProgram
         if (myRocket.getBounds().intersects(myAsteroid7.getBounds()))
         {
             RunGame = false;
+
             myGameOver = new GLabel("Game Over!", 325, 220);
             myGameOver.setColor(Color.WHITE);
             add(myGameOver);
