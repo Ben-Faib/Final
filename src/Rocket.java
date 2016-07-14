@@ -6,10 +6,10 @@ import java.awt.Color;
 public class Rocket extends GPolygon
 {
     private Space mySpace;
-
+    private double myAngle = 90;
     public Rocket(Color c)
     {
-        setColor(c); 
+        setColor(Color.LIGHT_GRAY);
         setFillColor(c);
         setFilled(true);
     }
@@ -34,5 +34,25 @@ public class Rocket extends GPolygon
         {
             setLocation(this.getX(), 10);
         }
+    }
+
+    public void setAngle(double angle)
+    {
+        myAngle = angle;
+    }
+
+    public double getAngle()
+    {
+        return myAngle;
+    }
+
+    public Missile shoot()
+    {
+        double VXM = 4*Math.cos(myAngle);
+        double VYM = 4*Math.sin(myAngle);
+
+        Missile missile = new Missile(getX(), getY(), 8, VXM, VYM, Color.WHITE);
+        return missile;
+        
     }
 }

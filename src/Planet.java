@@ -4,7 +4,7 @@ import java.awt.Color;
 
 public class Planet extends GOval
 {
-    private Space mySpace;
+
 
     public Planet(double x, double y, double size, Color d)
     {
