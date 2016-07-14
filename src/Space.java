@@ -238,7 +238,6 @@ public class Space extends GraphicsProgram
                     }
                 }
                 myMissiles.removeAll(missileToRemove);
-
                 gameOver();
                 pause(17);
             }
@@ -388,6 +387,9 @@ public class Space extends GraphicsProgram
             myRestart = new GLabel("Press 'R' to Restart", 325, 240);
             myRestart.setColor(Color.WHITE);
             add(myRestart);
+            
+            
+            
         }
         if (myRocket.getBounds().intersects(myAsteroid1.getBounds()))
         {
@@ -401,6 +403,8 @@ public class Space extends GraphicsProgram
             myRestart = new GLabel("Press 'R' to Restart", 325, 240);
             myRestart.setColor(Color.WHITE);
             add(myRestart);
+            
+            
         }
         if (myRocket.getBounds().intersects(myAsteroid2.getBounds()))
         {

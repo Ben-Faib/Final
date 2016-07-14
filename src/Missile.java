@@ -21,7 +21,7 @@ public class Missile extends GOval
     {
 
              
-        if (getY()> 470 || getX() >730 || getX() <=20 || getY() <=16) {
+        if (getY()> 505 || getX() >780 || getX() <=-15 || getY() <=-15) {
 
             return false;
         }
