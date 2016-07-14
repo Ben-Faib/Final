@@ -251,10 +251,12 @@ public class Space extends GraphicsProgram
             double X0 = e.getX();
             double Y1 = myRocket.getY();
             double X1 = myRocket.getX();
-            double newAngle = GMath.angle(X0, Y0,X1, Y1);
-
+            double newAngle = GMath.angle(X1, Y1, X0, Y0);
+            
             myRocket.rotate(newAngle - myRocket.getAngle());
             myRocket.setAngle(newAngle);
+            
+          
 
 
         }
