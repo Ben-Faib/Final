@@ -2,6 +2,7 @@ import acm.program.*;
 import acm.graphics.*;
 import java.awt.Color;
 
+//Details how the rocket will shoot at the Asteroids, and is called on in the Space class
 public class Missile extends GOval
 {
     double myVXM, myVYM;

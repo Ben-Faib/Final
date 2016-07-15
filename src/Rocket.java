@@ -3,6 +3,7 @@ import acm.graphics.*;
 import java.awt.Graphics2D;
 import java.awt.Color;
 
+//Creates the Rocket, and allows Space to call upon the Rocket polygon
 public class Rocket extends GPolygon
 {
     private Space mySpace;

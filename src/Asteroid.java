@@ -3,6 +3,7 @@ import acm.graphics.*;
 import java.awt.Graphics2D;
 import java.awt.Color;
 
+//creates Asteroids as polygons to be constructed in Space 
 public class Asteroid extends GPolygon
 {
     private double myXVelocity;

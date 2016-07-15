@@ -2,6 +2,7 @@ import acm.program.*;
 import acm.graphics.*;
 import java.awt.Color;
 
+//Creates stars to be constructed in Space
 public class GStar extends GPolygon
 {
     public GStar(double size)

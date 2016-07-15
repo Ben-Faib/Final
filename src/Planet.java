@@ -2,6 +2,7 @@ import acm.program.*;
 import acm.graphics.*;
 import java.awt.Color;
 
+//Allows Space to call on this Class to create planets 
 public class Planet extends GOval
 {
 

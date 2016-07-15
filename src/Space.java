@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import acm.graphics.GMath;
 import java.util.ArrayList;
 
+//initializes the game, and calls upon other classes to create the game. 
 public class Space extends GraphicsProgram
 {
     private Rocket myRocket;
@@ -269,36 +270,36 @@ public class Space extends GraphicsProgram
         {
             if (e.getKeyChar() == 'w')
             {
-                myRocket.move( 0, -35);
+                myRocket.move( 0, -15);
             }
 
             else if (e.getKeyChar() == 'd')
             {
-                myRocket.move( 35, 0);
+                myRocket.move( 15, 0);
             }
             else if (e.getKeyChar() == 's')
             {
-                myRocket.move( 0, 35);
+                myRocket.move( 0, 15);
             }
             else  if (e.getKeyChar() == 'a')
             {
-                myRocket.move( -35, 0);
+                myRocket.move( -15, 0);
             }
             else  if (e.getKeyChar() == 'q')
             {
-                myRocket.move( -35, -35);
+                myRocket.move( -15, -15);
             }
             else  if (e.getKeyChar() == 'e')
             {
-                myRocket.move( 35, -35);
+                myRocket.move( 15, -15);
             }
             else  if (e.getKeyChar() == 'c')
             {
-                myRocket.move( 35, 35);
+                myRocket.move( 15, 15);
             }
             else  if (e.getKeyChar() =='z')
             {
-                myRocket.move( -35, 35);
+                myRocket.move( -15, 15);
             }
             else  if (e.getKeyChar() == ' ')
             {
@@ -309,36 +310,6 @@ public class Space extends GraphicsProgram
                     add(newMissile);
                 }   
             }
-
-            if (e.getKeyChar() == 'd')
-            {
-                myRocket.move( 35, 0);
-            }
-            if (e.getKeyChar() == 's')
-            {
-                myRocket.move( 0, 35);
-            }
-            if (e.getKeyChar() == 'a')
-            {
-                myRocket.move( -35, 0);
-            }
-            if (e.getKeyChar() == 'q')
-            {
-                myRocket.move( -35, -35);
-            }
-            if (e.getKeyChar() == 'e')
-            {
-                myRocket.move( 35, -35);
-            }
-            if (e.getKeyChar() == 'c')
-            {
-                myRocket.move( 35, 35);
-            }
-            if (e.getKeyChar() =='z')
-            {
-                myRocket.move( -35, 35);
-            }
-
         }
         if (e.getKeyChar() == 'k')
         {
